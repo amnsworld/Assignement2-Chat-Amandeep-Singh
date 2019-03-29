@@ -1,41 +1,39 @@
 <?php
     session_start();
-	if(isset($_GET["logout"]))
-	{
-		if($_GET["logout"] === 1 )
-		{
-			
 	
-			// destroy session values
-			session_destroy();
-			print_r($_SESSION);
-		}
-	}
 	if(isset($_POST["submitBtn"]))
 	{
 		$username = $_POST["userName"];
 		$displayname = $_POST["userDisplayName"];
-		echo $username;
-		$xml = simplexml_load_file("users.xml");
-		
-		//print_r($xml->user[0]->name);
+
 		$flag= 0;
 		
-		 foreach ($xml as $x)
-		{
-			
-			 if($x->name == $username)
-			{
-				$flag=1;
-				
-				$_SESSION["username"] = $username;
-				$_SESSION["displayname"] = $displayname;			
-				$_SESSION["userid"] = $x->userid;			
-				
-				header("location:chatrooms1.php");
-			} 
+		$doc = new DOMDocument("1.0","utf-8");
+		$doc->preserveWhiteSpace = false;
+		$doc->formatOutput = true; 
+		//load XML
+		$doc->load("users.xml");
+		$xpath = new DOMXpath($doc);
+		$user = $xpath->query("//user[name/text()='".$username."']");
+		print_r($user);
+		
+		if (!is_null($user)) {
+			foreach ($user as $u) {
+				$uname = $u->childNodes[1]->nodeValue;
+				if($uname == $username)
+				{
+					$flag=1;
+
+					$_SESSION["username"] = $username;
+					$_SESSION["displayname"] = $displayname;			
+					$_SESSION["userid"] = $u->childNodes[0]->nodeValue;			
+
+					header("location:chatrooms.php");
+				} 
+			}
 		}
-		if($flag === 0)
+		
+		if($flag == 0)
 		{
 			$doc = new DOMDocument("1.0","utf-8");
 			$doc->preserveWhiteSpace = false;
@@ -68,8 +66,20 @@
 			$_SESSION["displayname"] = $displayname;			
 			$_SESSION["userid"] = "user_".time();			
 			
-			header("location:chatrooms1.php");
+			header("location:chatrooms.php");
 		} 
+	}
+	
+	if(isset($_GET["logout"]))
+	{
+		$logout= $_GET["logout"];
+		if( $logout == 1 )
+		{
+			// destroy session values
+			session_destroy();
+			//Reload page
+			header("location:index.php");
+		}
 	}
 	
 ?>
