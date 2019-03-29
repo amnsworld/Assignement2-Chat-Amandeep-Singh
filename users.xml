@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<user><userid>user_1553839286</userid><name>aman</name><displayname>aman</displayname><password>aman</password></user></users>
+  <user>
+    <userid>user_1553839286</userid>
+    <name>aman</name>
+    <displayname>aman</displayname>
+    <password>aman</password>
+  </user>
+  <user>
+    <userid>user_1553839552</userid>
+    <name>admin</name>
+    <displayname>admin</displayname>
+    <password>admin</password>
+  </user>
+</users>

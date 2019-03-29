@@ -54,6 +54,19 @@ h2 {
 	margin: 25px 10px;
 }
 
+#main-menu a {
+  font-weight:bold;
+  text-decoration:none;
+}
+#main-menu a, #main-menu a:visited {
+  color:#000;
+}
+#main-menu a:hover {
+  color:red;
+}
+
+
+
 .clear{
 	clear:both;`
 }
@@ -68,6 +81,44 @@ h2 {
 
 .crname, .crusers, .crdesc {
 	padding: 5px;
+}
+
+
+a:hover {
+  text-decoration:none;
+}
+
+.menu {
+  list-style:none;
+  float:right;
+}
+.menu li {
+  display:inline-block;
+  margin-right:1.5em;
+  vertical-align:top;
+  position:relative;
+}
+.menu li li {
+  display:block;
+  background-color:#ccc;
+  padding:2px 5px;
+  border-bottom:1px solid #999;
+}
+.menu li li:last-child {
+  border-bottom:0;
+}
+.menu ul {
+  padding:0;
+  position:absolute;
+  left:-10000px;
+  width:150px;
+}
+.menu li:hover ul {
+  left:0;
+}
+.hidden {
+  position:absolute;
+  left:-10000px;
 }
 
 

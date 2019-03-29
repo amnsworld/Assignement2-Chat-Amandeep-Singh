@@ -56,6 +56,7 @@
 		<title>Lab5 Assignment XML</title>
 		<meta name="description" content="Assignment 2 - Amandeep Singh">
 		<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
@@ -69,10 +70,15 @@
 							}
 					?>
 				</div>	
-				<div class="col-lg-7 col-md-5 col-sm-12 col-xs-12">
+				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 				</div>
-				<div class="col-lg-1 col-md-3 col-sm-12 col-xs-12">
-					<a href="index.php?logout=1">Logout</a>
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<nav id="main-menu">
+						<h3 class="hidden">Main navigation</h3>
+						<ul class="menu">
+							<li><a href="index.php?logout=1"><i class="fas fa-sign-out-alt"></i> Logout</a>
+						</ul>
+					</nav>
 				</div>
 			</div>
 			<hr/>
