@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chatRooms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="chatroom.xsd">
+  <chatRoom id="chatroom_1553779550">
+    <chatRoomName>XML Developers</chatRoomName>
+    <chatRoomDescription>Group of XML Developers</chatRoomDescription>
+    <chatRoomUsers>5</chatRoomUsers>
+    <chatRoomCreatedOn/>
+  </chatRoom>
+  <chatRoom id="chatroom_1553779551">
+    <chatRoomName>Humber College</chatRoomName>
+    <chatRoomDescription>Group of Humber College</chatRoomDescription>
+    <chatRoomUsers>3</chatRoomUsers>
+    <chatRoomCreatedOn/>
+  </chatRoom>
+  <chatRoom id="chatroom_1553779552">
+    <chatRoomName>International Students</chatRoomName>
+    <chatRoomDescription>Group of International students</chatRoomDescription>
+    <chatRoomUsers>15</chatRoomUsers>
+    <chatRoomCreatedOn/>
+  </chatRoom>
+  <chatRoom id="chatroom_1553779553">
+    <chatRoomName>International Students</chatRoomName>
+    <chatRoomDescription>Group of International students Group of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International students</chatRoomDescription>
+    <chatRoomUsers>15</chatRoomUsers>
+    <chatRoomCreatedOn/>
+  </chatRoom>
+</chatRooms>

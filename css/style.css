@@ -1,0 +1,78 @@
+body{
+	font-family: Arial;
+	margin-top: 3em;
+}
+main{
+	margin:0 10em 0 10em;
+}
+h2 {
+	font-family: cursive;
+    color: blue;
+}
+#chatlogo{
+	text-align:center;
+}
+
+#chatlogo img {
+	width:250px;
+	height:auto;
+}
+
+#btnSubmit{
+    display: grid;
+}
+
+#addchatroomarea{
+	border-right: 2px solid black;
+}
+
+#chatwindow{
+	width: 600px;
+    border: 2px solid green;
+    padding: 5px;
+    margin: 5px;
+    height: 400px;
+	overflow: scroll;
+}
+
+#usermessagearea{
+	width: 600px;
+    border: 2px solid green;
+    padding: 5px;
+    margin: 5px;
+    height: 100px;
+}
+
+#usermessage{
+	width: 400px;
+    float: left;
+	height: 80px;
+    margin: 5px 0px;
+}
+
+#messagesubmitBtn{
+	margin: 25px 10px;
+}
+
+.clear{
+	clear:both;`
+}
+.chatroomdetails {
+	border:5px solid black;
+    margin-bottom: 10px;
+}
+
+.addchatcontrol{
+	margin-bottom: 5px;
+}
+
+.crname, .crusers, .crdesc {
+	padding: 5px;
+}
+
+
+@media screen and (max-width: 1500px) {
+	main{
+		margin:0 2em 0 2em;
+	}
+}
