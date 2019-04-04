@@ -19,9 +19,15 @@ h2 {
 }
 
 #btnSubmit{
-    display: grid;
+   float:left;
+}
+#googlesubmitBtn{
+	margin-left:25px;
 }
 
+#loginButton{
+	margin-left: 95px;
+}
 #addchatroomarea{
 	border-right: 2px solid black;
 }

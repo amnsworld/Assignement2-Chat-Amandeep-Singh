@@ -29,7 +29,7 @@
 			//Create new item element
 			$messages = $doc->createElement("messages");
 			
-			$username = $doc->createElement("username",$_SESSION["username"]);
+			$username = $doc->createElement("username",$_SESSION["displayname"]);
 			$usermessage = $doc->createElement("message",$usrmsg);
 			$chatdatetime = $doc->createElement("chatDateTime",time());
 			

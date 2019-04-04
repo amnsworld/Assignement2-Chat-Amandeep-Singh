@@ -1,6 +1,19 @@
 <?php
 	session_start();
 	
+	require_once("config.php");
+	if(isset($_GET['code'])){
+		
+		$token = $gClient->fetchAccessTokenWithAuthCode($_GET['code']);
+		$_SESSION['access_token'] = $token;
+		
+		$oAuth = new Google_Service_Oauth2($gClient);
+		$userData = $oAuth->userinfo_v2_me->get();  
+		$_SESSION['email'] = $userData['email'];
+		$_SESSION['userid'] = "user_".$userData['id']; 
+		$_SESSION['username'] = $userData['givenName']; 
+		$_SESSION['displayname'] = $userData['givenName']; 
+	}
 	if(isset($_SESSION["username"]))
 	{
 		$doc = new DOMDocument("1.0","utf-8");
@@ -30,7 +43,7 @@
 			$attr->value = 'chatroom_'.time();
 			
 			//Appending newly created elements to channel 
-			$chatroomElement->appendChild($attr);
+			$chatroomElement->appendChild($attr);x
 			$chatroomElement->appendChild($chatroomName);
 			$chatroomElement->appendChild($description);
 			$chatroomElement->appendChild($users);
