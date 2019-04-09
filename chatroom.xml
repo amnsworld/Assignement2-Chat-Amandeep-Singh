@@ -3,25 +3,37 @@
   <chatRoom id="chatroom_1553779550">
     <chatRoomName>XML Developers</chatRoomName>
     <chatRoomDescription>Group of XML Developers</chatRoomDescription>
-    <chatRoomUsers></chatRoomUsers>
-    <chatRoomCreatedOn/>
+    <chatRoomUsers>0</chatRoomUsers>
+    <chatRoomCreatedOn>1554761411</chatRoomCreatedOn>
   </chatRoom>
   <chatRoom id="chatroom_1553779551">
     <chatRoomName>Humber College</chatRoomName>
     <chatRoomDescription>Group of Humber College</chatRoomDescription>
-    <chatRoomUsers>3</chatRoomUsers>
-    <chatRoomCreatedOn/>
+    <chatRoomUsers>0</chatRoomUsers>
+    <chatRoomCreatedOn>1554761411</chatRoomCreatedOn>
   </chatRoom>
   <chatRoom id="chatroom_1553779552">
     <chatRoomName>International Students</chatRoomName>
     <chatRoomDescription>Group of International students</chatRoomDescription>
-    <chatRoomUsers>15</chatRoomUsers>
-    <chatRoomCreatedOn/>
+    <chatRoomUsers>0</chatRoomUsers>
+    <chatRoomCreatedOn>1554761411</chatRoomCreatedOn>
   </chatRoom>
   <chatRoom id="chatroom_1553779553">
     <chatRoomName>International Students</chatRoomName>
     <chatRoomDescription>Group of International students Group of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International studentsGroup of International students</chatRoomDescription>
-    <chatRoomUsers>15</chatRoomUsers>
+    <chatRoomUsers>-2</chatRoomUsers>
     <chatRoomCreatedOn/>
+  </chatRoom>
+  <chatRoom id="chatroom_1554761411">
+    <chatRoomName>aman</chatRoomName>
+    <chatRoomDescription>a</chatRoomDescription>
+    <chatRoomUsers>0</chatRoomUsers>
+    <chatRoomCreatedOn>1554761411</chatRoomCreatedOn>
+  </chatRoom>
+  <chatRoom id="chatroom_1554767065">
+    <chatRoomName>test</chatRoomName>
+    <chatRoomDescription>testetetststtetstst</chatRoomDescription>
+    <chatRoomUsers>0</chatRoomUsers>
+    <chatRoomCreatedOn>1554767065</chatRoomCreatedOn>
   </chatRoom>
 </chatRooms>

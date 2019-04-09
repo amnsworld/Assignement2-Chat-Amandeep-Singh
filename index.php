@@ -46,7 +46,7 @@
 					}
 					else
 					{
-						echo "eerror";
+						echo "error";
 						//error 2: Password not matched
 						//header("location:index.php?e=2");
 					}
@@ -96,11 +96,19 @@
 		$logout= $_GET["logout"];
 		if( $logout == 1 )
 		{
+			if(isset($_SESSION['access_token']))
+			{
+				unset($_SESSION['access_token']);
+				$gClient->revokeToken();
+				
+			}
 			// destroy session values
 			session_destroy();
 			//Reload page
 			header("location:index.php");
 		}
+		
+		
 	}
 	
 ?>
@@ -113,8 +121,6 @@
 		<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-
 	</head>
 	<body>
 		<main>
@@ -122,8 +128,8 @@
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 				
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-				
+				<div class="col-lg-5 col-md-4 col-sm-12 col-xs-12">
+				<div id="formContent">
 					<!-- logo image reffered from https://www.freepik.com/free-vector/chat-bubble_2900821.htm -->
 					<div id="chatlogo">
 						<img src="images/chatlogo.jpg" alt="Chat"/>
@@ -169,6 +175,7 @@
 								<div id="btnGoogleSubmit">
 									<button type='Submit'  class="btn btn-primary"  name="googlesubmitBtn" onclick="window.location='<?php echo $loginURL ?>'" id="googlesubmitBtn" >Login with <i class="fab fa-google-plus-g"></i></button>
 								</div>
+								
 							</div>
 							<div>
 								<?php 
@@ -187,8 +194,9 @@
 							</div>
 						</form>			
 					</div>
+					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 				
 				</div>
 			</div>			

@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <user>
-    <userid>user_1554314559</userid>
-    <name>aman</name>
-    <displayname>aman</displayname>
-    <password>$2y$10$YoisrG7K7JT3wXA.N/qbS.Vku.RKIuTmMLm.LMcp2uCr9TCNw8sX6</password>
-  </user>
-  <user>
-    <userid>user_1554314814</userid>
-    <name>johnsmith@testmail.com</name>
-    <displayname>test</displayname>
-    <password>$2y$10$TizUWCOJgVJpvyYLO/2ct./Wa7Ua/.dtptl0nfaZhbZcTMfWkj9PO</password>
-  </user>
-</users>
+
+<user><userid>user_1554767047</userid><name>johnsmith@testmail.com</name><displayname>test</displayname><password>$2y$10$kMlNLG01C9kAFcYmbP3TfufrwvQ5HdTJ4gjjc5BZned8QUruAdgSC</password></user></users>

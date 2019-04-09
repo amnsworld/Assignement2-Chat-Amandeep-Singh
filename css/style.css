@@ -14,19 +14,20 @@ h2 {
 }
 
 #chatlogo img {
-	width:250px;
+	width:200px;
 	height:auto;
 }
 
 #btnSubmit{
    float:left;
 }
-#googlesubmitBtn{
-	margin-left:25px;
+
+#submitBtn{
+	 /* width:125px; */
 }
 
 #loginButton{
-	margin-left: 95px;
+	margin-left: 100px;
 }
 #addchatroomarea{
 	border-right: 2px solid black;
@@ -71,7 +72,22 @@ h2 {
   color:red;
 }
 
+#formContent {
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px 10px 20px 10px;
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
 
+#deletechatroom{
+	float:right;
+	margin-right:10px;
+}
 
 .clear{
 	clear:both;`

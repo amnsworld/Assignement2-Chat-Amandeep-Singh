@@ -14,6 +14,38 @@
 		$_SESSION['username'] = $userData['givenName']; 
 		$_SESSION['displayname'] = $userData['givenName']; 
 	}
+	
+	if(isset($_GET['cid'])){
+		
+		//update number of users in chatroom
+		
+			$doc = new DOMDocument("1.0","utf-8");
+			$doc->preserveWhiteSpace = false;
+			$doc->formatOutput = true; 
+			//load XML
+			$doc->load("chatroom.xml");
+			//reffered notes of Joanna Kommala &  https://www.php.net/manual/en/class.domxpath.php for xpath
+			$xpath = new DOMXpath($doc);
+			$numberofusers = $xpath->query("//chatRoom[@id='".$_GET['cid']."']/chatRoomUsers");
+			$currentusers = ($numberofusers[0]->childNodes[0]->nodeValue);
+			$numberofusers[0]->childNodes[0]->nodeValue = ($currentusers-1);
+			
+			$doc->save("chatroom.xml");
+				
+			//refereed to remove a specific parameter from url https://www.dreamincode.net/forums/topic/259491-remove-a-specific-get-variable-from-url/
+			$parameterToRemove = array("cid");
+			$finalurl = "?";
+			foreach($_GET as $index => $get)
+			{
+				if(!in_array($index, $parameterToRemove))
+				{
+					$finalurl .= $index.'='.$get.'&';
+				}
+			}
+			header('location: ' . $finalurl);
+
+	}
+	
 	if(isset($_SESSION["username"]))
 	{
 		$doc = new DOMDocument("1.0","utf-8");
@@ -43,7 +75,7 @@
 			$attr->value = 'chatroom_'.time();
 			
 			//Appending newly created elements to channel 
-			$chatroomElement->appendChild($attr);x
+			$chatroomElement->appendChild($attr);
 			$chatroomElement->appendChild($chatroomName);
 			$chatroomElement->appendChild($description);
 			$chatroomElement->appendChild($users);
@@ -54,7 +86,7 @@
 			$doc->save("chatroom.xml");
 
 			//Reload page				
-			header("location:chatrooms1.php"); 
+			header("location:chatrooms.php"); 
 		}
 	}
 	else
@@ -125,10 +157,26 @@
 								//echo $chatroom->getAttribute('id');
 								$n++;
 								$str.="<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
-											<a href='chatwindow.php?cid=".$chatroom->getAttribute('id')."'>
 											<div class='chatroomdetails'>
 												<div class='crname' style='color:white;background-color:black'>
-													".$chatroom->childNodes[0]->nodeValue."
+													".$chatroom->childNodes[0]->nodeValue."<a href='#'><span id='deletechatroom'>x</span></a>
+												</div>
+												<a href='chatwindow.php?cid=".$chatroom->getAttribute('id')."&is_first=1'>
+												<div class='crusers' style='color:#78281F'>
+													Number of Users:".$chatroom->childNodes[2]->nodeValue."
+												</div>
+												<div class='crdesc' style='color:#2E4053'>
+													Description: ".substr($chatroom->childNodes[1]->nodeValue,0,150)."...
+												</div>
+												</a>
+											</div>
+										</div>";
+								
+								/* $str.="<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
+											<a href='chatwindow.php?cid=".$chatroom->getAttribute('id')."&is_first=1'>
+											<div class='chatroomdetails'>
+												<div class='crname' style='color:white;background-color:black'>
+													".$chatroom->childNodes[0]->nodeValue."<span id='deletechatroom'>x</span>
 												</div>
 												<div class='crusers' style='color:#78281F'>
 													Number of Users:".$chatroom->childNodes[2]->nodeValue."
@@ -138,7 +186,7 @@
 												</div>
 											</div>
 											</a>
-										</div>";
+										</div>"; */
 							}
 							echo $str;
 						?>
